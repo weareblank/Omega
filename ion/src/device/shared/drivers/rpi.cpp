@@ -1,4 +1,5 @@
 #include <ion.h>
+#include <ion/console.h>
 #include "../regs/regs.h"
 #include "rpi.h"
 #include "display.h"
@@ -114,7 +115,7 @@ void Ion::Rpi::transferControl() {
       buf[2] = TO_HEX(((scan >> 56) & 0x0f));
       buf[1] = TO_HEX(((scan >> 60) & 0x0f));
       buf[0] = ':';
-      //Ion::Console::writeLine(buf); //FIXME
+      Ion::Console::writeLine(buf);
     }
     lastScan = scan;
   }
