@@ -25,9 +25,9 @@ public:
   virtual void didBecomeActive(Window * window);
   virtual void willBecomeInactive();
 private:
-  App(Container * container, Snapshot * snapshot);
+  App(Snapshot * snapshot);
   RpiController m_rpiController;
-  AppsContainer * m_appsContainer;
+  //AppsContainer * m_appsContainer;
 };
 
 }

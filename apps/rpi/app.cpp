@@ -20,7 +20,8 @@ const Image * App::Descriptor::icon() {
 }
 
 App * App::Snapshot::unpack(Container * container) {
-  return new (container->currentAppBuffer()) App(container, this);
+  //return new (container->currentAppBuffer()) App(container, this);
+  return new App(this);
 }
 
 void App::Snapshot::reset() {
@@ -34,7 +35,7 @@ App::Descriptor * App::Snapshot::descriptor() {
 void App::didBecomeActive(Window * window) {
   ::App::didBecomeActive(window);
   Ion::Rpi::transferControl();
-  m_appsContainer->switchTo(m_appsContainer->appSnapshotAtIndex(0));
+  //m_appsContainer->switchTo(m_appsContainer->appSnapshotAtIndex(0));
 }
 
 void App::willBecomeInactive() {
@@ -46,9 +47,11 @@ bool App::processEvent(Ion::Events::Event e) {
   return ::App::processEvent(e);
 }
 
-App::App(Container * container, Snapshot * snapshot) :
-  ::App(container, snapshot, &m_rpiController),
-  m_appsContainer((AppsContainer*) container)
+App::App(Snapshot * snapshot) :
+  ::App(snapshot, &m_rpiController),
+  m_rpiController(this)
+    //m_appsContainer((AppsContainer*) container)
+
 {
 }
 

@@ -8,7 +8,7 @@ namespace Rpi {
 
 class RpiController : public ViewController {
 public:
-  RpiController();
+  RpiController(Responder * parentResponder);
   View * view() override;
 private:
   RpiView m_rpiView;

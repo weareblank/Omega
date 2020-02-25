@@ -129,6 +129,7 @@ void initClocks() {
 #if USE_SD_CARD
   apb2enr.setSDIOEN(true);
 #endif
+  apb2enr.setSPI1EN(true); //Enable spi1 for rpi
   RCC.APB2ENR()->set(apb2enr);
 
   // AHB1 peripheral clock enable in low-power mode register

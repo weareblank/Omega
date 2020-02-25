@@ -15,6 +15,7 @@ i18n_files += $(addprefix apps/rpi/,\
 	base.es.i18n\
 	base.fr.i18n\
 	base.pt.i18n\
+	base.hu.i18n\
 )
 
 $(eval $(call depends_on_image,apps/rpi/app.cpp,apps/rpi/rpi_icon.png))

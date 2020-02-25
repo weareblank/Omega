@@ -66,6 +66,7 @@ dfu_src += $(addprefix ion/src/device/shared/drivers/, \
   timing.cpp \
   usb.cpp \
   wakeup.cpp \
+  rpi.cpp \
 )
 
 $(BUILD_DIR)/ion/src/device/shared/usb/dfu.elf: LDSCRIPT = ion/src/device/shared/usb/dfu.ld

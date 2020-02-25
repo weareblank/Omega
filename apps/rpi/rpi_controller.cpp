@@ -2,8 +2,9 @@
 
 namespace Rpi {
 
-RpiController::RpiController() :
+RpiController::RpiController(Responder * parentResponder) :
   ViewController(nullptr),
+  //ViewController(parentResponder),
   m_rpiView()
 {
 }
